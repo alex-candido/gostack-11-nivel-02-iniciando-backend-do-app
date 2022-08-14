@@ -23,7 +23,8 @@
       "no-param-reassign": 0,
       "import/extensions": 0,
       "no-console": 0,
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "class-methods-use-this": "off"
     },
     "settings": {
       "import/resolver": {
