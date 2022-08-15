@@ -1,7 +1,7 @@
 import AppDataSource from '../data-source';
 import Appointment from '../models/Appointment';
 
-const appointmentsRepository = AppDataSource.getRepository(Appointment);
+export const appointmentsRepository = AppDataSource.getRepository(Appointment);
 
 class AppointmentsRepository {
   public async findByDate(date: Date): Promise<Appointment | null> {
