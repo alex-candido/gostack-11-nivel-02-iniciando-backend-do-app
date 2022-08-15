@@ -6,7 +6,7 @@ export const appointmentsRepository = AppDataSource.getRepository(Appointment);
 class AppointmentsRepository {
   public async findByDate(date: Date): Promise<Appointment | null> {
     const findAppointment = await appointmentsRepository.findOneBy({
-      date,
+      date
     });
     return findAppointment || null;
   }

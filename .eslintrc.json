@@ -19,6 +19,8 @@
         "prettier"
     ],
     "rules": {
+      // "comma-dangle": ["error", "always-multiline"],
+      "trailing-comma": false,
       "linebreak-style": 0,
       "no-param-reassign": 0,
       "import/extensions": 0,
