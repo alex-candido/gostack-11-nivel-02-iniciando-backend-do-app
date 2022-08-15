@@ -5,13 +5,13 @@ import CreateAppointmentService from '../services/CreateAppointmentService';
 
 const appointmentsRouter = Router();
 
-appointmentsRouter.get('/', (request, response) => {
-  const appointments = appointmentsRepository.find();
+appointmentsRouter.get('/', async (request, response) => {
+  const appointments = await appointmentsRepository.find();
 
   return response.json(appointments);
 });
 
-appointmentsRouter.post('/', (request, response) => {
+appointmentsRouter.post('/', async (request, response) => {
   try {
     const { provider, date } = request.body;
 
@@ -19,7 +19,7 @@ appointmentsRouter.post('/', (request, response) => {
 
     const CreateAppointment = new CreateAppointmentService();
 
-    const appointment = CreateAppointment.execute({
+    const appointment = await CreateAppointment.execute({
       date: parsedDate,
       provider,
     });
