@@ -2,7 +2,7 @@
 
 # Iniciando backend do app (REFATORADO 2022!)
 
-Aplicação de cadastro de agendamentos, o projeto foi construído com Node.js com TypeScript, além de trabalhar com conceitos de banco de dados. Esta parte da API é o back-end da continuação do projeto [Primeiro Projeto com Node.js](https://github.com/alex-candido/nivel-02-primeiro-projeto-com-nodejs).
+Este projeto foi construído com Node.js, TypeScript, além de trabalhar com conceitos de banco de dados com Docker, PostgreSQL, TypeORM e outras ferramentas. Esta parte da API é o back-end da continuação do projeto [Primeiro Projeto com Node.js](https://github.com/alex-candido/nivel-02-primeiro-projeto-com-nodejs).
 
 ## 🚀 Abordagens
 
