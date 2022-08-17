@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import CreateRefactoredUser from '../services/CreateRefactoredUser';
 import CreateUserService from '../services/CreateUserService';
 
 const usersRouter = Router();
@@ -15,7 +16,9 @@ usersRouter.post('/', async (request, response) => {
       password,
     });
 
-    return response.json(user);
+    const RefactoredUser = new CreateRefactoredUser(user);
+
+    return response.json(RefactoredUser);
   } catch (err) {
     let errorMessage;
     if (err instanceof Error) {
