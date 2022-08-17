@@ -1,4 +1,6 @@
-import AppDataSource from "../data-source";
-import User from "../models/User";
+import AppDataSource from '../data-source';
+import User from '../models/User';
 
-export const UsersRepository = AppDataSource.getRepository(User);
+const UsersRepository = AppDataSource.getRepository(User);
+
+export default UsersRepository;
