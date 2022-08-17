@@ -1,7 +1,7 @@
 import { startOfHour } from 'date-fns';
 import Appointment from '../models/Appointment';
 import AppointmentsRepository, {
-  appointmentsRepository,
+  appointmentsRepository
 } from '../repositories/AppointmentsRepository';
 
 interface Request {

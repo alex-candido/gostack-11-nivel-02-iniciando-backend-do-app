@@ -16,7 +16,6 @@ class Appointment {
   @JoinColumn({
     name: 'provider_id',
     referencedColumnName: "id",
-    foreignKeyConstraintName: "fk_provider_id"
    })
   provider: User;
 
