@@ -1,13 +1,18 @@
 import { compare } from 'bcryptjs';
+import User from '../models/User';
 import UsersRepository from '../repositories/UsersRepository';
 
 interface Request {
   email: string;
-  passeword: string;
+  password: string;
+}
+
+interface Response {
+  user: User;
 }
 
 class AuthenticateUserService {
-  public async execute({ email, password }: Request): Promise<void> {
+  public async execute({ email, password }: Request): Promise<Response> {
     const user = await UsersRepository.findOneBy({ email });
 
     if (!user) {
