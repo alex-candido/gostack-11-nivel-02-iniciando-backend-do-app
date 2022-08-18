@@ -11,14 +11,14 @@ sessionsRouter.post('/', async (request, response) => {
 
     const authenticateUser = new AuthenticateUserService();
 
-    const dataUser = await authenticateUser.execute({
+    const { user, token } = await authenticateUser.execute({
       email,
       password,
     });
 
-    const user = new CreateRefactoredUser(dataUser.user);
+    const userRef = new CreateRefactoredUser(user);
 
-    return response.json({ user });
+    return response.json({ userRef, token });
   } catch (err) {
     let errorMessage;
     if (err instanceof Error) {
