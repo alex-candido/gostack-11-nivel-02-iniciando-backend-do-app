@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 import CreateRefactoredUser from '../services/CreateRefactoredUser';
 import CreateUserService from '../services/CreateUserService';
 
@@ -26,6 +27,10 @@ usersRouter.post('/', async (request, response) => {
     }
     return response.status(400).json(errorMessage);
   }
+});
+
+usersRouter.patch('/avatar', ensureAuthenticated, async (request, response) => {
+  return response.json({ ok: true });
 });
 
 export default usersRouter;
