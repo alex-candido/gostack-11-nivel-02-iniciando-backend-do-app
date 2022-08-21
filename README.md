@@ -13,14 +13,30 @@ Este projeto foi construído com Node.js, TypeScript, além de trabalhar com con
 - Criando tabela de agendamentos
 - Criando model de agendamento
 - Repositório do TypeORM
+- Cadastro de Usuários
+- Relacionamento nos models
+- Criação de registros
+- Criptografia de senha
+- Conceitos de JWT
+- Validando credenciais
+- Gerando token JWT
+- Rotas autenticadas
+- Upload de Imagens
+- Atualizando avatar
+- Tratando exceções
+- Lidando com erros
 
 ## 📌 Foi utilizado
 
 #### Dependências de Projeto
 
+- bcryptjs
 - date-fns
 - dotenv
 - express
+- express-async-errors
+- jsonwebtoken
+- multer
 - pg
 - reflect-metadata
 - typeorm
@@ -28,7 +44,10 @@ Este projeto foi construído com Node.js, TypeScript, além de trabalhar com con
 
 #### Dependências de Desenvolvimento
 
+- @types/bcryptjs
 - @types/express
+- @types/jsonwebtoken
+- @types/multer
 - @types/node
 - @typescript-eslint/eslint-plugin
 - @typescript-eslint/parser
@@ -51,6 +70,10 @@ $ git clone https://github.com/alex-candido/nivel-02-iniciando-backend-do-app.gi
 - Instalar dependências
 ```
 $ npm install
+```
+- Execute as Migrations
+```
+$ npm run migration:run
 ```
 - Converta TypeScript em JavaScript
 ```

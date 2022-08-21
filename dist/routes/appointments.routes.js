@@ -5,26 +5,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const date_fns_1 = require("date-fns");
 const express_1 = require("express");
-const AppointmentsRepository_1 = __importDefault(require("../repositories/AppointmentsRepository"));
+const ensureAuthenticated_1 = __importDefault(require("../middlewares/ensureAuthenticated"));
+const AppointmentsRepository_1 = require("../repositories/AppointmentsRepository");
+const CreateAppointmentService_1 = __importDefault(require("../services/CreateAppointmentService"));
 const appointmentsRouter = (0, express_1.Router)();
-const appointmentsRepository = new AppointmentsRepository_1.default();
-// SoC: Separations of concerns (Separação de preocupações)
-appointmentsRouter.get('/', (request, response) => {
-    const appointments = appointmentsRepository.all();
+appointmentsRouter.use(ensureAuthenticated_1.default);
+appointmentsRouter.get('/', async (request, response) => {
+    console.log(request.user);
+    const appointments = await AppointmentsRepository_1.appointmentsRepository.find();
     return response.json(appointments);
 });
-appointmentsRouter.post('/', (request, response) => {
-    const { provider, date } = request.body;
-    const parsedDate = (0, date_fns_1.startOfHour)((0, date_fns_1.parseISO)(date));
-    const findAppointmentInSameDate = appointmentsRepository.findByDate(parsedDate);
-    if (findAppointmentInSameDate) {
-        return response
-            .status(400)
-            .json({ message: 'This appointment is already booked' });
-    }
-    const appointment = appointmentsRepository.create({
-        provider,
+appointmentsRouter.post('/', async (request, response) => {
+    const { provider_id, date } = request.body;
+    const parsedDate = (0, date_fns_1.parseISO)(date);
+    const CreateAppointment = new CreateAppointmentService_1.default();
+    const appointment = await CreateAppointment.execute({
         date: parsedDate,
+        provider_id,
     });
     return response.json(appointment);
 });

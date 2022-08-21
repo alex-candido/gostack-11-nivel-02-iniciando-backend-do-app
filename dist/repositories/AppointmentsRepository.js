@@ -3,23 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const date_fns_1 = require("date-fns");
+exports.appointmentsRepository = void 0;
+const data_source_1 = __importDefault(require("../data-source"));
 const Appointment_1 = __importDefault(require("../models/Appointment"));
+exports.appointmentsRepository = data_source_1.default.getRepository(Appointment_1.default);
 class AppointmentsRepository {
-    constructor() {
-        this.appointments = [];
-    }
-    all() {
-        return this.appointments;
-    }
-    findByDate(date) {
-        const findAppointment = this.appointments.find(appointment => (0, date_fns_1.isEqual)(date, appointment.date));
+    async findByDate(date) {
+        const findAppointment = await exports.appointmentsRepository.findOneBy({
+            date,
+        });
         return findAppointment || null;
-    }
-    create({ provider, date }) {
-        const appointment = new Appointment_1.default({ provider, date });
-        this.appointments.push(appointment);
-        return appointment;
     }
 }
 exports.default = AppointmentsRepository;
