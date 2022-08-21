@@ -11,27 +11,19 @@ const usersRouter = Router();
 const upload = multer(uploadConfig);
 
 usersRouter.post('/', async (request, response) => {
-  try {
-    const { name, email, password } = request.body;
+  const { name, email, password } = request.body;
 
-    const createUser = new CreateUserService();
+  const createUser = new CreateUserService();
 
-    const user = await createUser.execute({
-      name,
-      email,
-      password,
-    });
+  const user = await createUser.execute({
+    name,
+    email,
+    password,
+  });
 
-    const RefactoredUser = new CreateRefactoredUser(user);
+  const RefactoredUser = new CreateRefactoredUser(user);
 
-    return response.json(RefactoredUser);
-  } catch (err) {
-    let errorMessage;
-    if (err instanceof Error) {
-      errorMessage = { error: err.message };
-    }
-    return response.status(400).json(errorMessage);
-  }
+  return response.json(RefactoredUser);
 });
 
 usersRouter.patch(
@@ -39,23 +31,15 @@ usersRouter.patch(
   ensureAuthenticated,
   upload.single('avatar'),
   async (request, response) => {
-    try {
-      const updateUserAvatar = new UpdateUserAvatarService();
-      const user = await updateUserAvatar.execute({
-        user_id: request.user.id,
-        avatarFilename: request.file?.filename || '',
-      });
+    const updateUserAvatar = new UpdateUserAvatarService();
+    const user = await updateUserAvatar.execute({
+      user_id: request.user.id,
+      avatarFilename: request.file?.filename || '',
+    });
 
-      const userRef = new CreateRefactoredAvatarUser(user);
+    const userRef = new CreateRefactoredAvatarUser(user);
 
-      return response.json(userRef);
-    } catch (err) {
-      let errorMessage;
-      if (err instanceof Error) {
-        errorMessage = { error: err.message };
-      }
-      return response.status(400).json(errorMessage);
-    }
+    return response.json(userRef);
   },
 );
 
