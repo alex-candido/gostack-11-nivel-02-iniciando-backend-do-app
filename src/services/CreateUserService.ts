@@ -1,4 +1,5 @@
 import { hash } from 'bcryptjs';
+import AppError from '../errors/AppError';
 import User from '../models/User';
 import UsersRepository from '../repositories/UsersRepository';
 
@@ -13,7 +14,7 @@ class CreateUserService {
     const checkUserExists = await UsersRepository.findOneBy({ email });
 
     if (checkUserExists) {
-      throw new Error('Email address already used');
+      throw new AppError('Email address already used');
     }
 
     const hashedPassword = await hash(password, 8);
