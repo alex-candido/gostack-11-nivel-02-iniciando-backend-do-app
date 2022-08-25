@@ -2,6 +2,8 @@
 
 # Iniciando backend do app (2022!)
 
+## 💻 Sobre
+
 Este projeto foi construído com Node.js, TypeScript, além de trabalhar com conceitos de banco de dados com Docker, PostgreSQL, TypeORM e outras ferramentas. Esta parte da API é o back-end da continuação do projeto [Primeiro Projeto com Node.js](https://github.com/alex-candido/nivel-02-primeiro-projeto-com-nodejs).
 
 ## 🚀 Abordagens
