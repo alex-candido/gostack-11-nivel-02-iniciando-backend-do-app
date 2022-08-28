@@ -1,6 +1,8 @@
 <img alt="GoStack" src="https://storage.googleapis.com/golden-wind/bootcamp-gostack/header-desafios.png" />
 
-# Iniciando backend do app (REFATORADO 2022!)
+# Iniciando backend do app (2022!)
+
+## 💻 Sobre
 
 Este projeto foi construído com Node.js, TypeScript, além de trabalhar com conceitos de banco de dados com Docker, PostgreSQL, TypeORM e outras ferramentas. Esta parte da API é o back-end da continuação do projeto [Primeiro Projeto com Node.js](https://github.com/alex-candido/nivel-02-primeiro-projeto-com-nodejs).
 
@@ -83,6 +85,3 @@ $ npm run build
 ```
 $ npm run dev:server
 ```
-
-
-
