@@ -17,7 +17,7 @@ sessionsRouter.post('/', async (request, response) => {
 
   const userRef = new CreateRefactoredUser(user);
 
-  return response.json({ userRef, token });
+  return response.json({ user: userRef, token });
 });
 
 export default sessionsRouter;
