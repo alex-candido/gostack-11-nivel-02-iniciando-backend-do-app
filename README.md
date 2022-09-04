@@ -1,4 +1,4 @@
-<img alt="GoStack" src="/src/assets/gobarber-web.png" />
+<img alt="GoBarber" src="/src/assets/gobarber-web.png" />
 
 # Iniciando backend do app - GoBarber
 
