@@ -1,10 +1,10 @@
-<img alt="GoStack" src="https://storage.googleapis.com/golden-wind/bootcamp-gostack/header-desafios.png" />
+<img alt="GoStack" src="/src/assets/gobarber-web.png" />
 
-# Iniciando backend do app (2022!)
+# Iniciando backend do app - GoBarber
 
 ## 💻 Sobre
 
-Este projeto foi construído com Node.js, TypeScript, além de trabalhar com conceitos de banco de dados com Docker, PostgreSQL, TypeORM e outras ferramentas. Esta parte da API é o back-end da continuação do projeto [Primeiro Projeto com Node.js](https://github.com/alex-candido/nivel-02-primeiro-projeto-com-nodejs).
+Neste projeto é realizado o backend da Aplicação GoBarber, no qual tem funcionalidades para criação e autenticação de usuários, além de registro de appointments, o projeto foi construído com Node.js, TypeScript, além de trabalhar com conceitos de banco de dados com Docker, PostgreSQL, TypeORM e outras ferramentas. Esta parte da API é o back-end da continuação do projeto [Primeiro Projeto com Node.js](https://github.com/alex-candido/gostack-11-nivel-03-primeiro-projeto-com-reactjs).
 
 ## 🚀 Abordagens
 
